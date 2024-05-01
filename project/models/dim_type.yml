@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: dim_type
+    description: type Dimension. One row per type
+    columns:
+      - name: typekey
+        description: The surrogate key of the type
+        tests:
+          - not_null
+          - unique
+      - name: item_type
+        description: The business / source key of the type
+        tests:
+          - not_null
+          - unique

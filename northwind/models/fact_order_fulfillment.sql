@@ -40,4 +40,3 @@ select
 from stg_orders o
     join stg_order_details od on o.orderid = od.orderid
     join stg_shippers s on s.shipperid = o.shipvia
-

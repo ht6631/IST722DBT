@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: fact_item
+    description: Item fact table. Accumulating Snapshot. One row per whole bid process for one item. Used to track bid information for one item
+    columns:
+      - name: itemid
+        description: Source key used to drill through.
+        tests:
+            - unique
+            - not_null
+      - name: sellerkey
+        description: Dimension key for dim_user as seller
+        tests:
+            - not_null
+      - name: buyerkey
+        description: Dimension key for dim_user as seller
+      - name: typekey
+        description: Dimension key for dim_type
+        tests:
+            - not_null
+      - name: itemreserve
+        description: item reserve amount, additive fact
+        tests:
+            - not_null
+      - name: itemsold
+        description: If item is sold (1) or not (0), additive fact.
+        tests:
+            - not_null
+      - name: itemsoldamount
+        description: Item sold amount, additive fact.
+      - name: totalbidcount
+        description: additive fact for total amount of bids on one item
+      - name: bidamountrange
+        description: additive fact for the amount range of bids on one item
+      - name: bidokpercentage
+        description: additive fact for the ok percentage of bids on one item
+      - name: biddercounts
+        description: additive fact for the unique bidder counts on one item
+

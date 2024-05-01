@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: obt_item
+    description: The item fact table combined with all of its outrigger dimensions into one bit table. Accumulating snapshot with one row per item does not include bids.

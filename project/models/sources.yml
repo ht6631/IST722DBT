@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: vbay
+    database: raw
+    schema: vbay
+
+    tables:
+      - name: vb_bids
+        columns:
+          - name: bid_id
+            tests:
+              - unique
+
+      - name: vb_items
+        columns:
+          - name: item_id
+            tests:
+              - unique       
+
+      - name: vb_item_types_lookup
+        columns:
+          - name: item_type
+            tests:
+              - unique        
+
+      - name: vb_users
+        columns:
+          - name: user_id
+            tests:
+              - unique  
+        
